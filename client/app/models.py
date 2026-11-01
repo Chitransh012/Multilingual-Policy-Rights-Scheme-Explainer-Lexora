@@ -74,8 +74,8 @@ class AuditSession(BaseModel):
     status: Literal["analyzing", "awaiting_approval", "executing", "done", "failed"] = "analyzing"
     goal: str
     profile: CitizenProfile
-    findings: list[str] = Field(default_factory=list)
-    pending_action: str | None = None
-    audit_log: list[str] = Field(default_factory=list)
+    findings: list[dict[str, Any]] = Field(default_factory=list)
+    pending_action: dict[str, Any] | None = None
+    audit_log: list[dict[str, Any]] = Field(default_factory=list)
     summary: str = ""
     steps: int = 0
