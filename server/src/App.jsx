@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
-const API = (import.meta.env.VITE_API_URL || "http://localhost:8000").replace(/\/$/, "");
+const API = (import.meta.env.VITE_API_URL || "https://multilingual-policy-rights-scheme.onrender.com").replace(/\/$/, "");
 const MAX_BYTES = 12 * 1024 * 1024;
 
 const LANGS = {
