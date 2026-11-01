@@ -14,7 +14,7 @@ from .models import AgentDecision, PolicyDocument
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
-MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
 
 SYSTEM_EXTRACTION_PROMPT = """You extract structured policy clauses from government notifications,
 welfare scheme drafts and municipal laws. The input may be in English, Hindi, Marathi, Telugu or Bengali.
