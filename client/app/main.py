@@ -34,7 +34,7 @@ app = FastAPI(title="Lexora - Multilingual Policy, Rights & Scheme Explainer")
 
 _origins = [o.strip() for o in os.getenv("FRONTEND_ORIGIN", "http://localhost:5173").split(",") if o.strip()]
 app.add_middleware(
-    CORSMiddleware, allow_origins=_origins, allow_credentials=False, allow_methods=["*"], allow_headers=["*"]
+    CORSMiddleware, allow_origins=["*"], allow_credentials=False, allow_methods=["*"], allow_headers=["*"]
 )
 
 
