@@ -65,7 +65,7 @@ class AgentDecision(BaseModel):
     tool_name: Literal[
         "evaluate_eligibility", "calculate_annual_benefit", "generate_voice_explainer", "finish"
     ]
-    arguments: dict[str, Any] = Field(default_factory=dict)
+    arguments: str = Field(default="{}", description="Provide arguments as a JSON formatted string")
     message: str = ""
 
 
@@ -74,8 +74,8 @@ class AuditSession(BaseModel):
     status: Literal["analyzing", "awaiting_approval", "executing", "done", "failed"] = "analyzing"
     goal: str
     profile: CitizenProfile
-    findings: list[dict[str, Any]] = Field(default_factory=list)
-    pending_action: dict[str, Any] | None = None
-    audit_log: list[dict[str, Any]] = Field(default_factory=list)
+    findings: list[str] = Field(default_factory=list)
+    pending_action: str | None = None
+    audit_log: list[str] = Field(default_factory=list)
     summary: str = ""
     steps: int = 0
